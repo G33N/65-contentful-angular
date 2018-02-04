@@ -1,74 +1,21 @@
+<mat-toolbar>My App</mat-toolbar>
 <div class="content">
-
-
-<div *ngIf="lesson$ | async as lesson">
-  <h1>{{ lesson.title }}</h1>
-  <time>Published on {{ lesson.createdAt | date: 'fullDate'  }}</time>
-  <hr>
-
-  <h3>Tags</h3>
-  <span *ngFor="let tag of lesson.tags" class="tag is-info">
-    {{ tag }}
-  </span>
-
-  <hr>
-  
-
-  {{ lesson.body }}
-  
-
+  <div *ngIf="lesson$ | async as lesson">
+    <h1>{{ lesson.title }}</h1>
+    <time>Published on {{ lesson.createdAt | date: 'fullDate' }}</time>
+    <hr>
+    <div>
+      <img src="{{image}}">
+    </div>
+    <h3>Tags</h3>
+    <span *ngFor="let tag of lesson.tags" class="tag is-info">
+      {{ tag }}
+    </span>
+    <hr> {{ body }}
+  </div>
+  <!-- <div [innerHTML]="lesson.body | mdToHtml"> -->
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div [innerHTML]="lesson.body | mdToHtml"> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
 <router-outlet></router-outlet>
+<footer class="docs-footer">
+  <div>Powered by Google ©2010-2018.</div>
+</footer>
